@@ -1,0 +1,275 @@
+html {
+    scroll-behavior: smooth;
+  }
+  
+  .navigation {
+    height: 80px;
+  }
+  
+  section {
+    scroll-margin-top: 80px;
+  }
+  
+  /* そのほかのCSS */
+  
+  :root {
+    --base-color: #e8faff;
+    --main-color: #087c98;
+  }
+  
+  html {
+    font-family: "游ゴシック Medium", YuGothic, YuGothicM,
+      "Hiragino Kaku Gothic ProN", Meiryo, sans-serif;
+    color: #333333;
+  }
+  
+  body {
+    padding-top: 80px;
+    line-height: 1.7;
+  }
+  
+  button {
+    font-family: "Lato", sans-serif;
+  }
+  
+  img {
+    max-width: 100%;
+  }
+  
+  .color-button {
+    font-size: 0.875rem;
+    width: 200px;
+    height: 50px;
+    cursor: pointer;
+    text-align: center;
+    color: #ffffff;
+    border: none;
+    border-radius: 25px;
+    background-color: #393f43;
+  }
+  
+  main {
+    position: relative;
+    z-index: 1;
+  }
+  
+  .navigation {
+    position: fixed;
+    z-index: 2;
+    top: 0;
+    display: grid;
+    align-items: center;
+    width: 100%;
+    background-color: #393f43;
+    grid-auto-flow: column;
+  }
+  
+  .brand-logo {
+    display: grid;
+    width: 80px;
+    height: 80px;
+    background-image: linear-gradient(to right, #32b39c 0%, #098bc3 100%);
+    place-content: center;
+  }
+  
+  .link-list {
+    font-size: 18px;
+    display: grid;
+    justify-content: end;
+    padding-right: 24px;
+    grid-auto-flow: column;
+    gap: 30px;
+  }
+  
+  .link-list a {
+    font-family: "Lato", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    text-decoration: none;
+    color: #ffffff;
+  }
+  
+  section {
+    min-width: 900px;
+    padding: 150px 80px;
+  }
+  
+  .section-title {
+    position: relative;
+    height: 100px;
+    color: var(--main-color);
+  }
+  
+  .section-title:after {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    display: block;
+    width: 100px;
+    height: 3px;
+    content: "";
+    background: linear-gradient(to right, #32b39c 0%, #098bc3 100%);
+  }
+  
+  .section-title .en {
+    font-family: "Roboto", sans-serif;
+    font-size: 50px;
+    font-weight: 400;
+    font-style: normal;
+    line-height: 1.2;
+  }
+  
+  .section-title .jp {
+    font-size: 26px;
+    font-weight: 500;
+    font-style: normal;
+    margin-bottom: 30px;
+  }
+  
+  .profile {
+    display: grid;
+    background: var(--base-color)
+      url(https://assets.codepen.io/221808/profile_title_bg.svg) no-repeat center
+      0;
+    grid-template:
+      "section-title visual" auto
+      "description visual" auto
+      "nav visual" 1fr /
+      30% 1fr;
+    column-gap: 40px;
+  }
+  
+  .profile hgroup {
+    grid-area: section-title;
+  }
+  
+  .profile p {
+    padding-top: 60px;
+    padding-bottom: 60px;
+    grid-area: description;
+  }
+  
+  .profile nav {
+    grid-area: nav;
+    place-self: center;
+  }
+  
+  .profile figure {
+    grid-area: visual;
+  }
+  
+  .gallery {
+    background-color: #fff;
+    background-image: url(https://assets.codepen.io/221808/gallely_title_bg.svg);
+    background-repeat: no-repeat;
+    background-position: center 0;
+  }
+  
+  .gallery .section-title {
+    text-align: center;
+  }
+  
+  .gallery .section-title:after {
+    left: calc(50% - 50px);
+  }
+  
+  .photo-list {
+    display: grid;
+    justify-content: center;
+    margin-top: 90px;
+    grid-template: repeat(2, 1fr) / repeat(4, 1fr);
+    gap: 50px 40px;
+  }
+  
+  .gallery nav {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 90px;
+  }
+  
+  .blog {
+    display: grid;
+    background: var(--base-color)
+      url(https://assets.codepen.io/221808/blog_title_bg.svg) no-repeat center 0;
+    grid-template:
+      "section-title entry" auto
+      "description entry" auto
+      "nav entry" 1fr /
+      30% 1fr;
+    column-gap: 40px;
+  }
+  
+  .blog .description {
+    padding-top: 60px;
+    padding-bottom: 60px;
+    grid-area: description;
+  }
+  
+  .blog nav {
+    grid-area: nav;
+    place-self: center;
+  }
+  
+  .blog .entry-list {
+    display: flex;
+    flex-direction: column;
+    grid-area: entry;
+    gap: 30px;
+  }
+  
+  .entry {
+    font-size: 14px;
+    font-weight: normal;
+    display: grid;
+    max-width: 760px;
+    padding: 10px;
+    background-color: #ffffff;
+    grid-template-columns: 200px 1fr;
+  }
+  
+  .entry .thumbnail {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    aspect-ratio: 1 / 1;
+  }
+  
+  .entry .entry-body {
+    padding: 16px;
+  }
+  
+  .entry .entry-body h2 {
+    font-size: 18px;
+    font-weight: normal;
+  }
+  
+  .entry .entry-body time {
+    color: #b6bfc4;
+  }
+  
+  .entry .entry-body :is(p, time) {
+    margin-top: 10px;
+  }
+  
+  .entry .read-more p {
+    margin-bottom: 45px;
+    color: var(--main-color);
+  }
+  
+  figcaption {
+    margin-top: 12px;
+  }
+.gulirano{
+    text-decoration: none;
+    color: white;
+}  
+.color-button:hover {
+    background-color: deeppink;
+    filter: blur(4px);
+}
+.photo-list li:hover >figure{
+    background-color: #9944aa1d;
+    zoom: 90%;
+    animation-duration: var(--base-color);
+}
